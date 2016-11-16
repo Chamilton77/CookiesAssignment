@@ -5,20 +5,20 @@ $(document).ready(function(){
 //to the original value.
 	$('#sugar').click(function(){
 		var currentvalue = parseInt(Cookies.get('sugar'));
-		if(isNaN(currentvalue)){//this means that the cookie is not there
-			Cookies.set('sugar', 1);
-		}else{//this means that it has a value
+		if(!isNaN(currentvalue)){//this means that the cookie is not there
 			Cookies.set('sugar', currentvalue + 1);
+		}else{//this means that it has a value
+			Cookies.set('sugar', 1);
 		}
 		$('#sug1').text("You have eaten " + Cookies.get('sugar') + " Sugar cookies!");
 	});
 //this does the same as the first function
 	$('#lemon').click(function(){
 		var currentvalue = parseInt(Cookies.get('lemon'));
-		if(isNaN(currentvalue)){//this means that the cookie is not there
-			Cookies.set('lemon', 1);
-		}else{//this means that it has a value
+		if(!isNaN(currentvalue)){//this means that the cookie is not there
 			Cookies.set('lemon', currentvalue + 1);
+		}else{//this means that it has a value
+			Cookies.set('lemon', 1);
 		}
 		$('#lem1').text("You have eaten " + Cookies.get('lemon') +" Lemon cookies!");
 
@@ -26,10 +26,10 @@ $(document).ready(function(){
 //this does the same as the first function
 	$('#chocolate').click(function(){
 		var currentvalue = parseInt(Cookies.get('chocolate'));
-		if(isNaN(currentvalue)){//this means that the cookie is not there
-			Cookies.set('chocolate', 1);
-		}else{//this means that it has a value
+		if(!isNaN(currentvalue)){//this means that the cookie is not there
 			Cookies.set('chocolate', currentvalue + 1);
+		}else{//this means that it has a value
+			Cookies.set('chocolate', 1);
 		}
 		$('#cho1').text("You have eaten " + Cookies.get('chocolate') + " chocolate cookies!");
 	});
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		}
 //This function starts the timer
 	$('#start').click(function(){
-		var timeLeft = 2;
+		var timeLeft = 15;
 		var timerId = setInterval(function(){
 			countdown(timeLeft, timerId);
 			timeLeft--;
